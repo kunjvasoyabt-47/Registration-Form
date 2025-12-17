@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     background: #eef2f7;
+    background-image: url(/img.png);
 }
 
 /* -------- CARD -------- */
@@ -81,7 +82,7 @@ button {
     width: 100%;
     padding: 11px;
     margin-top: 5px;
-    background-color: #007bff;
+    background-color: #5785b6;
     color: #ffffff;
     font-size: 15px;
     font-weight: bold;

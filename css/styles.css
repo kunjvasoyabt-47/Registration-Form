@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+  
+ 
 }
 
 /* -------- BODY STYLES -------- */
@@ -13,6 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     background: #eef2f7;
+       background-image: url(/img.png);
 }
 
 /* -------- FORM CARD -------- */
@@ -96,8 +99,8 @@ label[for="terms"] {
 button {
     width: 100%;
     padding: 11px;
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: #5785b6;
+     color: #ffffff;
     font-size: 15px;
     font-weight: bold;
     border: none;

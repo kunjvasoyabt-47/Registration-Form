@@ -116,8 +116,25 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        localStorage.setItem("email", emailInput.value);
-        localStorage.setItem("password", passwordInput.value);
+            
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        const emailExists = users.some(
+            user => user.email === emailInput.value
+        );
+
+        if (emailExists) {
+            emailError.innerText = "Email already registered (local)";
+            emailInput.style.border = "1px solid red";
+            return;
+        }
+
+        users.push({
+            email: emailInput.value,
+            password: passwordInput.value
+        });
+
+        localStorage.setItem("users", JSON.stringify(users));
 
         const sheetData = {
             username: usernameInput.value,
@@ -136,13 +153,11 @@ document.addEventListener("DOMContentLoaded", function () {
             emailError.innerText = "Email already registered";
             emailInput.style.border = "1px solid red";
         } else if (result === "success") {
-            alert("🎉 Registration Successful");
+            alert("Registration Successful");       
             form.reset();
+            window.location.href = "login.html";
         }
         });
-
-
-
-            });
+      });
 
 });

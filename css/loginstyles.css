@@ -6,7 +6,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* -------- BODY STYLES -------- */
+/* -------- BODY -------- */
 body {
     min-height: 100vh;
     display: flex;
@@ -15,10 +15,9 @@ body {
     background: #eef2f7;
 }
 
-/* -------- FORM CARD -------- */
+/* -------- CARD -------- */
 #my-form {
-    
-    width: 400px;
+    width: 380px;
     background-color: #ffffff;
     padding: 25px 22px;
     border-radius: 8px;
@@ -28,7 +27,7 @@ body {
 /* -------- HEADING -------- */
 #heading {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* -------- HEADING TEXT -------- */
@@ -37,7 +36,7 @@ body {
     color: #333;
 }
 
-/* -------- FORM CONTAINER -------- */
+/* -------- FORM -------- */
 #all-fields form {
     width: 100%;
 }
@@ -45,19 +44,18 @@ body {
 /* -------- LABELS -------- */
 label {
     display: block;
+    margin-bottom: 6px;
     font-size: 14px;
     font-weight: 600;
     color: #333;
-    margin-bottom: 3px;
 }
 
-/* -------- INPUT FIELDS -------- */
-input[type="text"],
+/* -------- INPUTS -------- */
 input[type="email"],
-input[type="password"],
-input[type="date"] {
+input[type="password"] {
     width: 100%;
     padding: 10px;
+    margin-bottom: 12px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 14px;
@@ -71,31 +69,18 @@ input:focus {
     box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
 }
 
-/* -------- CHECKBOX -------- */
-#terms {
-    margin-right: 6px;
-}
-
-/* -------- CHECKBOX LABEL -------- */
-label[for="terms"] {
-    display: inline;
-    font-size: 13px;
-    font-weight: normal;
-    color: #444;
-}
-
 /* -------- ERROR MESSAGE -------- */
 .error-message {
     font-size: 12px;
     color: red;
-    margin-top: -8px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /* -------- BUTTON -------- */
 button {
     width: 100%;
     padding: 11px;
+    margin-top: 5px;
     background-color: #007bff;
     color: #ffffff;
     font-size: 15px;
@@ -106,17 +91,14 @@ button {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-/* -------- BUTTON HOVER -------- */
 button:hover {
     background-color: #0056b3;
     transform: translateY(-1px);
 }
 
-/* -------- BUTTON ACTIVE -------- */
 button:active {
     transform: translateY(0);
 }
-
 
 /* -------- REDIRECT TEXT -------- */
 .redirect-text {
@@ -126,46 +108,28 @@ button:active {
     color: #555;
 }
 
-/* -------- REDIRECT LINK -------- */
 .redirect-text a {
     color: #007bff;
     text-decoration: none;
     font-weight: 600;
 }
 
-/* -------- REDIRECT LINK HOVER -------- */
 .redirect-text a:hover {
     text-decoration: underline;
 }
 
-
-
-/* -------- TABLET (max-width: 768px) -------- */
+/* -------- TABLET -------- */
 @media (max-width: 768px) {
     #my-form {
         width: 90%;
-        padding: 22px 20px;
     }
 
     #heading h1 {
         font-size: 20px;
     }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"] {
-        font-size: 13px;
-        padding: 9px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
-    }
 }
 
-/* -------- MOBILE (max-width: 480px) -------- */
+/* -------- MOBILE -------- */
 @media (max-width: 480px) {
     body {
         padding: 15px;
@@ -174,27 +138,9 @@ button:active {
     #my-form {
         width: 100%;
         padding: 20px 16px;
-        border-radius: 6px;
     }
 
     #heading h1 {
         font-size: 18px;
-    }
-
-    label {
-        font-size: 13px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="date"] {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px;
     }
 }

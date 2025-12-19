@@ -6,18 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "login.html"
     return
   }
-  const skillsGrid = document.querySelector(".skills-grid");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        skillsGrid.classList.add("show");
-        observer.unobserve(skillsGrid);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  if (skillsGrid) observer.observe(skillsGrid);
 
   // Hamburger menu toggle
   const hamburger = document.getElementById("hamburger")
@@ -40,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("currentUser")
     window.location.href = "login.html"
   })
+
+  // About page specific functionality only
+  console.log("About page loaded")
 })
 
 // Show loader function

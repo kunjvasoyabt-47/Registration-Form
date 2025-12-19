@@ -18,7 +18,7 @@ function hideLoader() {
 
 /* ---------- REGEX ---------- */
 const REGEX = {
-    username: /^[A-Za-z]*$/,
+    username: /^[A-Za-z]+( [A-Za-z]+)*$/,
     email: /^[a-zA-Z0-9._%+-]+@(?!gmail\.com$)(?!yahoo\.com$)(?!outlook\.com$)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 };

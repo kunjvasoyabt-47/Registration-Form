@@ -6,11 +6,12 @@
     <title>Home - Portfolio</title>
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/homestyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-    <script src="../js/homescript.js" ></script>    
+    <script src="../js/homescript.js"></script>    
     <script src="../js/globalscript.js"></script>
+    
+
 </head>
 <body>
     <div class="global-loader">
@@ -29,6 +30,10 @@
                 <li><a href="home.html" class="nav-link active">Home</a></li>
                 <li><a href="about.html" class="nav-link">About Me</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+              
+                <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button></li>
                 <li><button id="logoutBtn" class="logout-btn">Logout</button></li>
             </ul>
         </div>
@@ -54,16 +59,12 @@
                     </h2>
                     <p class="intro-title">Full Stack Developer</p>
                     <p class="intro-description">
-                       I’m a full-stack developer with a strong focus on backend development using Java and Spring Boot, complemented by React on the frontend. I enjoy building scalable systems and solving real-world problems through clean and reliable code.
+                       I'm a full-stack developer with a strong focus on backend development using Java and Spring Boot, complemented by React on the frontend. I enjoy building scalable systems and solving real-world problems through clean and reliable code.
                     </p>
                     
                     <div class="cta-buttons">
                         <button class="cta-primary">Get In Touch</button>
-
-                    <button class="cta-secondary" onclick="openAndDownloadResume()">
-                        My Resume
-                     
-                    </button>
+                        <button class="cta-secondary" onclick="openAndDownloadResume()">My Resume</button>
                     </div>
                 </div>
                 </div>
@@ -106,7 +107,6 @@
                         <span class="skill-name">Responsive Web</span>
                     </div>
 
-                                        <!-- Spring Boot -->
                     <div class="skill-card">
                     <div class="skill-icon springboot">
                         <i class="fa-brands fa-java"></i>
@@ -114,7 +114,6 @@
                     <span class="skill-name">Spring Boot</span>
                     </div>
 
-                    <!-- Docker -->
                     <div class="skill-card">
                     <div class="skill-icon docker">
                         <i class="fa-brands fa-docker"></i>
@@ -122,7 +121,6 @@
                     <span class="skill-name">Docker</span>
                     </div>
 
-                    <!-- SQL -->
                     <div class="skill-card">
                     <div class="skill-icon sql">
                         <i class="fa-solid fa-database"></i>
@@ -130,7 +128,6 @@
                     <span class="skill-name">SQL</span>
                     </div>
 
-                    <!-- .NET -->
                     <div class="skill-card">
                     <div class="skill-icon dotnet">
                         <i class="fa-brands fa-microsoft"></i>
@@ -138,7 +135,6 @@
                     <span class="skill-name">.NET</span>
                     </div>
 
-                                    <!-- CSS -->
                     <div class="skill-card">
                     <div class="skill-icon css">
                         <i class="fa-brands fa-css3-alt"></i>
@@ -146,7 +142,6 @@
                     <span class="skill-name">CSS</span>
                     </div>
 
-                    <!-- Java -->
                     <div class="skill-card">
                     <div class="skill-icon java">
                         <i class="fa-brands fa-java"></i>
@@ -154,19 +149,12 @@
                     <span class="skill-name">Java</span>
                     </div>
 
-                  
-
-                    <!-- Python -->
                     <div class="skill-card">
                     <div class="skill-icon python">
                         <i class="fa-brands fa-python"></i>
                     </div>
                     <span class="skill-name">Python</span>
                     </div>
-
-
-
-
                     </div>
                 </div>
             </div>

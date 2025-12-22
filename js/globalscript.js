@@ -46,3 +46,47 @@ function checkPasswordRules(password) {
         hasMinLength: password.length >= 8
     };
 }
+
+
+;(() => {
+  
+  const getTheme = () => localStorage.getItem("theme") || "light"
+
+  
+  const setTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme)
+    localStorage.setItem("theme", theme)
+    updateThemeIcon(theme)
+  }
+
+ 
+  const updateThemeIcon = (theme) => {
+    const themeIcon = document.getElementById("themeIcon")
+    if (themeIcon) {
+      if (theme === "dark") {
+        themeIcon.className = "fas fa-sun"
+      } else {
+        themeIcon.className = "fas fa-moon"
+      }
+    }
+  }
+
+ 
+  setTheme(getTheme())
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("themeToggle")
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const currentTheme = getTheme()
+        const newTheme = currentTheme === "light" ? "dark" : "light"
+        setTheme(newTheme)
+      })
+    }
+
+   
+    updateThemeIcon(getTheme())
+  })
+})()

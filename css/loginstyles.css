@@ -1,56 +1,71 @@
+/* -------- CARD -------- */
 #my-form {
-    width: 380px;
-     background: linear-gradient(
-        180deg,
-        #ffffff,
-        #f3f6fb
-    );
-    margin: 30px;
-    padding: 25px 22px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  background: var(--bg-form);
+  margin: 30px;
+  padding: 25px 22px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px var(--shadow-md);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 #heading {
-    text-align: center;
-    margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 #heading h1 {
-    font-size: 22px;
-    color: #333;
+  font-size: 22px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 /* -------- LABELS -------- */
 label {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-label);
+  transition: color 0.3s ease;
 }
 
 /* -------- INPUTS -------- */
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 14px; /* ✅ FIXED */
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 5px;
+  border: 1px solid var(--border-input);
+  font-size: 14px;
+  background: var(--bg-input);
+  color: var(--text-input);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+  outline: none;
+  border-color: var(--border-input-focus);
+  box-shadow: 0 0 6px var(--shadow-input-focus);
 }
 
 /* -------- REDIRECT -------- */
 .redirect-text {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    color: #555;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-redirect);
+  transition: color 0.3s ease;
+}
+
+.redirect-text a {
+  color: var(--text-link);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.redirect-text a:hover {
+  text-decoration: underline;
 }

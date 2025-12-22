@@ -1,35 +1,34 @@
 /* -------- CARD -------- */
 #my-form {
-    width: 400px;
-    margin: 40px;
-      background: linear-gradient(
-        180deg,
-        #ffffff,
-        #f3f6fb
-    );
-    padding: 25px 22px;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 40px;
+  background: var(--bg-form);
+  padding: 25px 22px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px var(--shadow-md);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* -------- HEADING -------- */
 #heading {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #heading h1 {
-    font-size: 22px;
-    color: #333;
+  font-size: 22px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 /* -------- LABELS -------- */
 label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 6px;   /* ✅ FIXED */
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-label);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
 /* -------- INPUTS -------- */
@@ -37,70 +36,75 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border-input);
+  font-size: 14px;
+  background: var(--bg-input);
+  color: var(--text-input);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 /* -------- INPUT FOCUS -------- */
 input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+  outline: none;
+  border-color: var(--border-input-focus);
+  box-shadow: 0 0 6px var(--shadow-input-focus);
 }
 
 /* -------- CHECKBOX -------- */
 .terms-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 12px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 10px;
 }
 
 #terms {
-    width: auto;
+  width: auto;
 }
 
 /* -------- REDIRECT -------- */
 .redirect-text {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 13px;
-    color: #555;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-redirect);
+  transition: color 0.3s ease;
 }
 
 .redirect-text a {
-    color: #007bff;
-    font-weight: 600;
-    text-decoration: none;
+  color: var(--text-link);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .redirect-text a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* -------- CHECKBOX GROUP -------- */
 .checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;              /* space between checkbox & label */
-    margin: 12px 0 10px;  /* vertical spacing */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 10px;
 }
 
 /* Checkbox size fix */
 .checkbox-group input[type="checkbox"] {
-    width: auto;
-    margin: 0;
+  width: auto;
+  margin: 0;
 }
 
 /* Checkbox label fix */
 .checkbox-group label {
-    margin: 0;            /* remove block spacing */
-    font-size: 13px;
-    font-weight: normal;
-    color: #333;
-    cursor: pointer;
+  margin: 0;
+  font-size: 13px;
+  font-weight: normal;
+  color: var(--text-label);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
-

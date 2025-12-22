@@ -1,101 +1,195 @@
+
+:root {
+
+  --bg-primary: #eef2f7;
+  --bg-secondary: rgba(255, 255, 255, 0.95);
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-navbar: rgba(255, 255, 255, 0.15);
+  --bg-skill-card: rgba(255, 255, 255, 0.8);
+  --bg-info-item: rgba(74, 144, 226, 0.05);
+  --bg-hero: #f9faff;
+
+  --text-primary: #333;
+  --text-secondary: #555;
+  --text-tertiary: #666;
+  --text-muted: #999;
+
+  --brand-primary: #305b8e;
+  --brand-secondary: #5785b6;
+  --brand-gradient-start: #5785b6;
+  --brand-gradient-end: #305b8e;
+
+  --border-color: rgba(255, 255, 255, 0.25);
+  --border-light: rgba(87, 133, 182, 0.1);
+
+  --shadow-sm: rgba(0, 0, 0, 0.08);
+  --shadow-md: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(87, 133, 182, 0.3);
+
+  --overlay: rgba(0, 0, 0, 0.4);
+
+ 
+  --bg-form: linear-gradient(180deg, #ffffff, #f3f6fb);
+  --bg-input: #ffffff;
+  --text-label: #333;
+  --text-input: #333;
+  --border-input: #ccc;
+  --border-input-focus: #007bff;
+  --shadow-input-focus: rgba(0, 123, 255, 0.4);
+  --text-link: #007bff;
+  --text-redirect: #555;
+  --btn-hover: #0056b3;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f1419;
+  --bg-secondary: rgba(30, 36, 44, 0.95);
+  --bg-card: rgba(30, 36, 44, 0.9);
+  --bg-navbar: rgba(20, 25, 32, 0.85);
+  --bg-skill-card: rgba(40, 46, 54, 0.8);
+  --bg-info-item: rgba(74, 144, 226, 0.15);
+  --bg-hero: #151a20;
+
+  --text-primary: #e8eaed;
+  --text-secondary: #c4c7cc;
+  --text-tertiary: #a8abb0;
+  --text-muted: #6e7179;
+
+  --brand-primary: #6ba3d8;
+  --brand-secondary: #8bb7e0;
+  --brand-gradient-start: #8bb7e0;
+  --brand-gradient-end: #6ba3d8;
+
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(107, 163, 216, 0.2);
+
+  --shadow-sm: rgba(0, 0, 0, 0.3);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(107, 163, 216, 0.2);
+
+  --overlay: rgba(0, 0, 0, 0.7);
+
+  /* Added form-specific CSS variables for dark theme */
+  --bg-form: linear-gradient(180deg, #1e242c, #2a3038);
+  --bg-input: #2d3542;
+  --text-label: #e8eaed;
+  --text-input: #e8eaed;
+  --border-input: #4a5568;
+  --border-input-focus: #6ba3d8;
+  --shadow-input-focus: rgba(107, 163, 216, 0.4);
+  --text-link: #8bb7e0;
+  --text-redirect: #a8abb0;
+  --btn-hover: #5a8fc7;
+}
+
 /* -------- GLOBAL RESET -------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* -------- BODY -------- */
 body {
-    min-height: 100vh;
-    background: #eef2f7;
-    background-image: url("../images/background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  background-image: url("../images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  /* Added smooth transition for theme changes */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    justify-content: center;
-    align-items: center;
+/* Added dark mode body background overlay */
+[data-theme="dark"] body {
+  background-blend-mode: overlay;
 }
 
 /* -------- GLOBAL LOADER -------- */
 .global-loader {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
 }
 
 .global-loader .spinner {
-    width: 45px;
-    height: 45px;
-    border: 5px solid #e0e0e0;
-    border-top: 5px solid #5785b6;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  width: 45px;
+  height: 45px;
+  border: 5px solid #e0e0e0;
+  border-top: 5px solid var(--brand-secondary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* -------- COMMON ERROR -------- */
 .error-message {
-    font-size: 12px;
-    color: red;
-    margin-bottom: 10px;
+  font-size: 12px;
+  color: red;
+  margin-bottom: 10px;
 }
 
 .form-wrapper {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;   /* horizontal center */
-    align-items: center;       /* vertical center */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 /* -------- COMMON BUTTON -------- */
 button,
 .btn {
-    width: 100%;
-    padding: 11px;
-    background-color: #5785b6;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+  padding: 11px;
+  background-color: var(--brand-secondary);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover,
 .btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-1px);
+  background-color: #0056b3;
+  transform: translateY(-1px);
 }
 
 button:active,
 .btn:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .navbar {
-  background: rgba(255, 255, 255, 0.15); /* transparent */
+  background: var(--bg-navbar);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari support */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px var(--shadow-sm);
   position: sticky;
   top: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid var(--border-color);
   z-index: 1000;
+  /* Added transition for smooth theme switching */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
 
 .nav-container {
   max-width: 1200px;
@@ -109,7 +203,8 @@ button:active,
 .nav-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #305b8e;
+  color: var(--brand-primary);
+  transition: color 0.3s ease;
 }
 
 .nav-menu {
@@ -122,11 +217,10 @@ button:active,
 .nav-link {
   position: relative;
   padding: 0.5rem 1rem;
-  color: #333;
+  color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 
 .nav-link::after {
   content: "";
@@ -135,8 +229,8 @@ button:active,
   bottom: 4px;
   width: 0;
   height: 2px;
-  background-color: #305b8e;
-  transition: width 0.3s ease, left 0.3s ease;
+  background-color: var(--brand-primary);
+  transition: width 0.3s ease, left 0.3s ease, background-color 0.3s ease;
   transform: translateX(-50%);
 }
 
@@ -145,7 +239,33 @@ button:active,
   width: 70%;
 }
 
+/* Added theme toggle button styles */
+.theme-toggle {
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-right: 1rem;
+}
 
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+  background: var(--bg-info-item);
+  border-color: var(--brand-secondary);
+}
+
+.theme-toggle i {
+  font-size: 1.1rem;
+  color: var(--brand-primary);
+  transition: color 0.3s ease;
+}
 
 .logout-btn {
   color: white;
@@ -172,12 +292,11 @@ button:active,
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: #4a90e2;
+  background: var(--brand-secondary);
   border-radius: 3px;
   transition: 0.3s;
 }
 
-/* Adding content card styles */
 .main-content {
   max-width: 1200px;
   margin: 2rem auto;
@@ -185,12 +304,14 @@ button:active,
 }
 
 .content-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-secondary);
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 3rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px var(--shadow-md);
   animation: fadeIn 0.5s ease-in;
+  /* Added transition for theme changes */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -205,13 +326,13 @@ button:active,
 }
 
 .content-card h1 {
-  color: #305b8e;
+  color: var(--brand-primary);
   margin-bottom: 2rem;
   font-size: 2.5rem;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
-/* Adding responsive styles */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -222,11 +343,11 @@ button:active,
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--bg-secondary);
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 27px var(--shadow-md);
     padding: 2rem 0;
     gap: 0;
   }
@@ -239,6 +360,12 @@ button:active,
     display: block;
     padding: 1rem;
     width: 100%;
+  }
+
+  /* Added theme toggle responsive positioning */
+  .theme-toggle {
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
 
   .logout-btn {

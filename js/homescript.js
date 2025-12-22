@@ -6,26 +6,33 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "login.html"
     return
   }
-  const skillsGrid = document.querySelector(".skills-grid");
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        skillsGrid.classList.add("show");
-        observer.unobserve(skillsGrid);
-      }
-    });
-  }, { threshold: 0.3 });
+  // Skills grid intersection observer
+  const skillsGrid = document.querySelector(".skills-grid")
 
-  if (skillsGrid) observer.observe(skillsGrid);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          skillsGrid.classList.add("show")
+          observer.unobserve(skillsGrid)
+        }
+      })
+    },
+    { threshold: 0.3 },
+  )
+
+  if (skillsGrid) observer.observe(skillsGrid)
 
   // Hamburger menu toggle
   const hamburger = document.getElementById("hamburger")
   const navMenu = document.getElementById("navMenu")
 
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active")
-  })
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active")
+    })
+  }
 
   // Close menu when clicking on a link
   document.querySelectorAll(".nav-link").forEach((link) => {
@@ -36,18 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Logout functionality
   const logoutBtn = document.getElementById("logoutBtn")
-  logoutBtn.addEventListener("click", () => {
-    localStorage.removeItem("currentUser")
-    window.location.href = "login.html"
-  })
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("currentUser")
+      window.location.href = "login.html"
+    })
+  }
+
+  // CTA button actions
+  const ctaPrimary = document.querySelector(".cta-primary")
+  const ctaSecondary = document.querySelector(".cta-secondary")
+
+  if (ctaPrimary) {
+    ctaPrimary.addEventListener("click", () => {
+      window.location.href = "contact.html"
+    })
+  }
+
+  if (ctaSecondary) {
+    ctaSecondary.addEventListener("click", () => {
+      window.location.href = "about.html"
+    })
+  }
 })
-
-// Show loader function
-function showLoader() {
-  document.getElementById("loader").style.display = "block"
-}
-
-// Hide loader function
-function hideLoader() {
-  document.getElementById("loader").style.display = "none"
-}

@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portfolio</title>
-    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../css/global.css">
-    <script src="../js/globalscript.js" defer></script>
-    <script src="../js/homescript.js" defer></script>
+    <link rel="stylesheet" href="../css/homestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+/>
+
+    <script src="../js/homescript.js" ></script>    
+    <script src="../js/globalscript.js"></script>
 </head>
 <body>
-    <div id="loader" class="loader"></div>
+    <div class="global-loader">
+        <div class="spinner"></div>
+    </div>
     
     <nav class="navbar">
         <div class="nav-container">
@@ -30,31 +35,138 @@
     </nav>
 
     <main class="main-content">
-        <div class="content-card">
-            <h1>Welcome to My Portfolio</h1>
-            <div class="profile-section">
-                <div class="profile-image">
-                    <img src="/images/image.png" alt="Profile">
+        <div class="hero-section">
+            <div class="hero-background"></div>
+            <div class="content-wrapper">
+                <div class="home-intro-section">
+                <div class="profile-container">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-ring"></div>
+                        <img src="../images/profile.png" alt="Profile" class="profile-image">
+                    </div>
                 </div>
-                <div class="profile-text">
-                    <h2>Hello, I'm <span class="highlight">Your Name</span></h2>
-                    <p class="subtitle">Full Stack Developer & Designer</p>
-                    <p class="description">
-                        I'm a passionate developer with expertise in creating beautiful and functional web applications. 
-                        I specialize in modern web technologies and love bringing ideas to life through code.
+                
+                <div class="intro-section">
+                    <h1 class="intro-greeting">Hello, I'm</h1>
+                    <h2 class="intro-name">
+                        <span class="name-text">Kunj Vasoya</span>
+                        <span class="name-underline"></span>
+                    </h2>
+                    <p class="intro-title">Full Stack Developer</p>
+                    <p class="intro-description">
+                       I’m a full-stack developer with a strong focus on backend development using Java and Spring Boot, complemented by React on the frontend. I enjoy building scalable systems and solving real-world problems through clean and reliable code.
                     </p>
-                    <div class="skills">
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
+                    
+                    <div class="cta-buttons">
+                        <button class="cta-primary">Get In Touch</button>
+                        <button class="cta-secondary">View Projects</button>
+                    </div>
+                </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3 class="skills-title">Technical Skills</h3>
+                    <div class="skills-grid">
+                      <div class="skill-card">
+                        <div class="skill-icon html">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                        <span class="skill-name">HTML</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon js">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon react">
+                            <i class="fa-brands fa-react"></i>
+                        </div>
+                        <span class="skill-name">React</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon node">
+                            <i class="fa-brands fa-node-js"></i>
+                        </div>
+                        <span class="skill-name">Node.js</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon responsive">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <span class="skill-name">Responsive Web</span>
+                    </div>
+
+                                        <!-- Spring Boot -->
+                    <div class="skill-card">
+                    <div class="skill-icon springboot">
+                        <i class="fa-brands fa-java"></i>
+                    </div>
+                    <span class="skill-name">Spring Boot</span>
+                    </div>
+
+                    <!-- Docker -->
+                    <div class="skill-card">
+                    <div class="skill-icon docker">
+                        <i class="fa-brands fa-docker"></i>
+                    </div>
+                    <span class="skill-name">Docker</span>
+                    </div>
+
+                    <!-- SQL -->
+                    <div class="skill-card">
+                    <div class="skill-icon sql">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <span class="skill-name">SQL</span>
+                    </div>
+
+                    <!-- .NET -->
+                    <div class="skill-card">
+                    <div class="skill-icon dotnet">
+                        <i class="fa-brands fa-microsoft"></i>
+                    </div>
+                    <span class="skill-name">.NET</span>
+                    </div>
+
+                                    <!-- CSS -->
+                    <div class="skill-card">
+                    <div class="skill-icon css">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <span class="skill-name">CSS</span>
+                    </div>
+
+                    <!-- Java -->
+                    <div class="skill-card">
+                    <div class="skill-icon java">
+                        <i class="fa-brands fa-java"></i>
+                    </div>
+                    <span class="skill-name">Java</span>
+                    </div>
+
+                  
+
+                    <!-- Python -->
+                    <div class="skill-card">
+                    <div class="skill-icon python">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <span class="skill-name">Python</span>
+                    </div>
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
-
-    <script src="home.js"></script>
 </body>
 </html>
